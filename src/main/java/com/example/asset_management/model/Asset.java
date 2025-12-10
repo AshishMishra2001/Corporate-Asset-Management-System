@@ -1,7 +1,6 @@
 package com.example.asset_management.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -12,13 +11,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "asset")
+@Table(name = "asset", uniqueConstraints = {
+    @UniqueConstraint(columnNames = {"asset_name", "serial_number"}, name = "uk_asset_name_serial")
+})
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,7 +32,6 @@ public class Asset {
 
     private String assetName;
 
-    @Column(unique = true)
     private String serialNumber;
 
     @Enumerated(EnumType.STRING)
