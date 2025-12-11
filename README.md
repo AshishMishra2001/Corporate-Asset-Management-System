@@ -233,25 +233,25 @@ Complete asset list with status badges and assign/unassign actions.
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Controller Layer                          │
+│                    Controller Layer                         │
 │              @RestController + @RequestMapping              │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                     Service Layer                            │
+│                     Service Layer                           │
 │              @Service + @Transactional                      │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   Repository Layer                           │
+│                   Repository Layer                          │
 │              JpaRepository + Spring Data                    │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                      PostgreSQL                              │
+│                      PostgreSQL                             │
 │                 employee + asset tables                     │
 └─────────────────────────────────────────────────────────────┘
 ```
